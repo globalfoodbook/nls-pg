@@ -18,13 +18,13 @@ This will run on a default port of 5432.
 To change the PORT for this run the following command:
 
 ```bash
-$ docker run --name=nls --detach=true --publish=5432:5432 --volume=/path/to/nuts-api-code/:/your/path/to/nuts-api-location nls
+$ docker run --name=nls-pg --detach=true --publish=5432:5432--env POSTGRES_PASSWORD=${POSTGRES_PASSWORD} _service --env NUT_PG_DSN="postgres://ikennaokpala:${POSTGRES_PASSWORD}@${POSTGRES_IP}/nutrition_development?sslmode=disable" nls-pg
 ```
 
 To run the server and expose it on port 5432 of the host machine, run the following command:
 
 ```bash
-$ docker run --name=nls --detach=true --publish=5432:5432 globalfoodbook/nls-pg
+$ docker run --name=nls-pg --detach=true --publish=5432:5432 globalfoodbook/nls-pg
 ```
 
 # NB:
